@@ -14,8 +14,8 @@ public class P2SelectionScene_UIManager : MonoBehaviour
     }
 
     void onButtonClick(int index){
-        GameManager.selectCharacter(2, index);
         Debug.Log($"Button: Player 2 clicked char {index+1}");
+        GameManager.selectCharacter(2, index);
         SceneManager.LoadScene("MapSelectionScene");
     }
 }

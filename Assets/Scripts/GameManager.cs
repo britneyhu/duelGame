@@ -6,16 +6,14 @@ public static class GameManager
     public static characterTemplate p2SelectedCharacter;
     public static characterTemplate[] characters = new characterTemplate[2];
 
-    public static mapTemplate selectedMap;
-    public static mapTemplate[] maps = new mapTemplate[1];
+    public static int selectedMapIndex;
+    public static int selectedPlatformIndex;
     
 
 	public static void InitGame()
 	{
         characters[0] = new characterTemplate{charName = "char1", maxHealth = 100f, maxSpeed = 4f, maxJump = 5f, ability1 = "ability1", ability2 = "ability2", ult = "ult"};
         characters[1] = new characterTemplate{charName = "char2", maxHealth = 80f, maxSpeed = 6f, maxJump = 8f, ability1 = "ability1", ability2 = "ability2", ult = "ult"};
-
-        maps[0] = new mapTemplate{mapName = "map1"};
 
         Debug.Log($"GameManager Initialized, Characters: {characters.Length}");
 	}
@@ -33,8 +31,11 @@ public static class GameManager
         
     }
 
-    public static void selectMap(int index){
-        selectedMap = maps[index];
-        Debug.Log($"Game Manager: Player selected: {selectedMap.mapName}");
+    public static void selectMap(int index)
+    {
+        selectedMapIndex = index;
+        selectedPlatformIndex = index;
+
+        Debug.Log($"Game Manager: Player selected map: {selectedMapIndex}");
     }
 }
