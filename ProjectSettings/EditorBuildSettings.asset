@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/P2SelectionScene.unity
     guid: b4de53f00db80b5409347e2094344b0a
+  - enabled: 1
+    path: Assets/Scenes/MapSelectionScene.unity
+    guid: 6ac8db246af7bbe47924bff3ee16c7a6
+  - enabled: 1
+    path: Assets/Scenes/FightScene.unity
+    guid: 4ed912b9e0adce246b9959a4b004d12e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
