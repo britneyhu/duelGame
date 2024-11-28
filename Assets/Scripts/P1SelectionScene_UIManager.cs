@@ -14,7 +14,8 @@ public class SelectionScene_UIManager : MonoBehaviour
     }
 
     void onButtonClick(int index){
-        Debug.Log($"Char {index+1} button clicked");
+        GameManager.selectCharacter(1, index);
+        Debug.Log($"Button: Player 1 clicked char {index+1}");
         // SceneManager.LoadScene("SelectionScene");
     }
 }
