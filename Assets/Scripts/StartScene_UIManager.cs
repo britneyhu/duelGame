@@ -15,7 +15,7 @@ public class StartScene_UIManager : MonoBehaviour
 
     void onButtonClick(int index){
         if(index == 0){
-            Debug.Log($"Start Button Clicked, Index = {index}");
+            // Debug.Log($"Start Button Clicked, Index = {index}");
             SceneManager.LoadScene("SelectionScene");
         }
     }
