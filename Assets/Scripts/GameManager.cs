@@ -6,6 +6,7 @@ public static class GameManager
     public static characterTemplate p2SelectedCharacter;
     public static characterTemplate[] characters = new characterTemplate[2];
 
+    public static int disabledCharacter;
     public static int selectedMapIndex;
     public static int selectedPlatformIndex;
     
@@ -22,6 +23,7 @@ public static class GameManager
     public static void selectCharacter(int player, int index){
         if(player == 1){
             p1SelectedCharacter = characters[index];
+            disabledCharacter = index;
             Debug.Log($"Game Manager: Player 1 selected character: {p1SelectedCharacter.charName}");
         }
         else{
