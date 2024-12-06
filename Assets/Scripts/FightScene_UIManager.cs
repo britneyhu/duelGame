@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class FightScene_UIManager : MonoBehaviour
@@ -10,16 +11,23 @@ public class FightScene_UIManager : MonoBehaviour
     public Texture2D[] platforms;
     public Texture2D[] characterSkins;
 
-
     void Start()
     {
         loadMap(GameManager.selectedMap);
-        loadPlayers(GameManager.p1SelectedCharacter, GameManager.p2SelectedCharacter);
+        loadPlayers(GameManager.p1.index, GameManager.p2.index);
+        Debug.Log($"p1 size {player1Sprite.size}");
     }
 
     void Update()
     {
-        
+        if(GameManager.p1.currentHealth == 0){
+            GameManager.winner = 2;
+            //stop game and show winner screen
+        }
+
+        if(GameManager.p2.currentHealth == 0){
+            GameManager.winner = 1;
+        }
     }
 
     void loadMap(int mapIndex)
@@ -58,7 +66,7 @@ public class FightScene_UIManager : MonoBehaviour
             new Vector2(0.5f, 0.5f)
         );
 
-        player1Sprite.sprite = newP1Sprite;
+        player1Sprite.sprite = newP1Sprite;        
 
         Texture2D p2SelectedChar = characterSkins[p2Index];
 

@@ -11,7 +11,7 @@ public class P2SelectionScene_UIManager : MonoBehaviour
 
     void Start()
     {
-        if(GameManager.p1SelectedCharacter != 0){
+        if(GameManager.p1.index != 0){
             char1_Button.onClick.AddListener(()=> onButtonClick(0));
         }
         else{
@@ -19,7 +19,7 @@ public class P2SelectionScene_UIManager : MonoBehaviour
             char1_Button.targetGraphic.CrossFadeAlpha(0.2f, 0, false);
         }
 
-        if(GameManager.p1SelectedCharacter != 1){
+        if(GameManager.p1.index != 1){
             char2_Button.onClick.AddListener(()=> onButtonClick(1));
         }
         else{
