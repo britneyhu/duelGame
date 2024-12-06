@@ -2,13 +2,11 @@ using UnityEngine;
 
 public static class GameManager
 {
-    public static characterTemplate p1SelectedCharacter;
-    public static characterTemplate p2SelectedCharacter;
+    public static int p1SelectedCharacter;
+    public static int p2SelectedCharacter;
     public static characterTemplate[] characters = new characterTemplate[2];
 
-    public static int disabledCharacter;
-    public static int selectedMapIndex;
-    public static int selectedPlatformIndex;
+    public static int selectedMap;
     
 
 	public static void InitGame()
@@ -22,22 +20,20 @@ public static class GameManager
 	
     public static void selectCharacter(int player, int index){
         if(player == 1){
-            p1SelectedCharacter = characters[index];
-            disabledCharacter = index;
-            Debug.Log($"Game Manager: Player 1 selected character: {p1SelectedCharacter.charName}");
+            p1SelectedCharacter = index;
+            Debug.Log($"Game Manager: Player 1 selected character: {p1SelectedCharacter}");
         }
         else{
-            p2SelectedCharacter = characters[index];
-            Debug.Log($"Game Manager: Player 2 selected character: {p2SelectedCharacter.charName}");
+            p2SelectedCharacter = index;
+            Debug.Log($"Game Manager: Player 2 selected character: {p2SelectedCharacter}");
         }
         
     }
 
     public static void selectMap(int index)
     {
-        selectedMapIndex = index;
-        selectedPlatformIndex = index;
+        selectedMap = index;
 
-        Debug.Log($"Game Manager: Player selected map: {selectedMapIndex}");
+        Debug.Log($"Game Manager: Player selected map: {selectedMap}");
     }
 }
